@@ -35,9 +35,9 @@ KVO的本质就是监听一个对象有没有调用set方法。<br>
  
 用到了响应式编程思想：响应式编程思想：不需要考虑调用顺序，只需要知道考虑结果，类似于蝴蝶效应，产生一个事件，会影响很多东西，这些事件像流一样的传播出去，然后影响结果，借用面向对象的一句话，万物皆是流。<br>
  
-// KVO底层实现
-// 1.自定义NSKVONotifying_Person子类<br>
-// 2.重写setName,在内部恢复父类做法,通知观察者<br>
-// 3.如何让外界调用自定义Person类的子类方法,`修改`当前对象的`isa指针`,指向NSKVONotifying_Person<br>
+#### KVO底层实现 <br>
+*  1.自定义NSKVONotifying_Person子类<br>
+*  2.重写setName,在内部恢复父类做法,通知观察者<br>
+*  3.如何让外界调用自定义Person类的子类方法,`修改`当前对象的`isa指针`,指向NSKVONotifying_Person<br>
 
--
+
