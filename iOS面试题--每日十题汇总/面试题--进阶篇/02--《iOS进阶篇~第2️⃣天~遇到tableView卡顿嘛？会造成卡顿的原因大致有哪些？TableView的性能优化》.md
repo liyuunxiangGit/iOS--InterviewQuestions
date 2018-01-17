@@ -1,4 +1,4 @@
-# iOS进阶篇~第2️⃣天~遇到tableView卡顿嘛？会造成卡顿的原因大致有哪些？TableView的性能优化
+# iOS进阶篇--第2️⃣天~遇到tableView卡顿嘛？会造成卡顿的原因大致有哪些？TableView的性能优化
 
 ## 总结如下：
 ## tableView卡顿解决方案：
