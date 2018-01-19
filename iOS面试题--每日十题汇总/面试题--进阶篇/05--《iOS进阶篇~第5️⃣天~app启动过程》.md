@@ -4,8 +4,9 @@
 * 解析Info.plist<br>
     > 加载相关信息，例如如闪屏 <br>
     > 沙箱建立、权限检查<br>
-加载动态库<br>
-调用ObjC的 +load 函数<br>
+
+* 加载动态库<br>
+* 调用ObjC的 +load 函数<br>
 * 程序执行<br>
     > 调用main()<br>
     > 调用UIApplicationMain()<br>
