@@ -1,6 +1,7 @@
 # iOS进阶篇--第2️⃣天~iOS 代理为啥要用weak修饰?
 
 
+#### 我总结的一句话：那就是循环引用导致无法释放，最后内存泄漏。
 
 
 在开发中我们经常使用代理，或自己写个代理，而代理属性都用weak(assign)修饰，看过有些开发者用strong(retain)，但并没发现有何不妥，也不清楚weak(assign)与strong(retain)修饰有何区别 <br>
@@ -18,7 +19,7 @@
 可能你还不太理解，没关系，下面先举例，看结果，再分析！
 
 ### 举例
-* HSDog类
+* HSDog类<br>
 `HSDog.h:`
 ```
 @protocol HSDogDelegate <NSObject>
@@ -43,7 +44,7 @@ NSLog(@"HSDog----销毁");
 
 @end
 ```
-* HSPerson类
+* HSPerson类<br>
 `HSPerson.h:`
 ```
 @interface HSPerson : NSObject
@@ -123,27 +124,27 @@ HSDog----销毁
 
 * 使用strong
 
-![](https://github.com/liyuunxiangGit/iOS--InterviewQuestions/blob/master/imageFile/使用strong描述代理.png)
-`person对dog强引用`
+![](https://github.com/liyuunxiangGit/iOS--InterviewQuestions/blob/master/imageFile/使用strong描述代理.png)<br>
+person对dog强引用
 ```
 @property (nonatomic, strong) HSDog *dog; person
 ```
-`self.dog.delegate又对person强引用，使person的retainCount + 1`
+self.dog.delegate又对person强引用，使person的retainCount + 1
 ```
 @property (nonatomic, strong) id<HSDogDelegate>delegate;
 ```
-`当viewController不对person引用后，dog.delegate对person还强引用着，person的retainCount为1，所以person不会释放，dog固然也不会释放，这就是造成循环引用的导致内存泄露的原因！`
+当viewController不对person引用后，dog.delegate对person还强引用着，person的retainCount为1，所以person不会释放，dog固然也不会释放，这就是造成循环引用的导致内存泄露的原因！
 
 * 使用weak
 
-![](https://github.com/liyuunxiangGit/iOS--InterviewQuestions/blob/master/imageFile/使用weak描述代理.png)
+![](https://github.com/liyuunxiangGit/iOS--InterviewQuestions/blob/master/imageFile/使用weak描述代理.png)<br>
 `person对dog强引用`
 ```
 @property (nonatomic, strong) HSDog *dog; person
 ```
-`self.dog.delegate只对person弱引用，并未使person的retainCount + 1`
+self.dog.delegate只对person弱引用，并未使person的retainCount + 1
 ```
 @property (nonatomic, weak) id<HSDogDelegate>delegate;
 ```
-`所以当viewController不对person引用后，person的retainCount为0，即person会被释放，那么dog也被释放`
+所以当viewController不对person引用后，person的retainCount为0，即person会被释放，那么dog也被释放
 
