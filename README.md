@@ -12,7 +12,6 @@ iOS面试题集锦（附答案）
 
 
 ### 面试题总目录展示
-![](https://github.com/liyuunxiangGit/iOS--InterviewQuestions/blob/master/imageFile/面试题目录图片.png)
 ![](https://github.com/liyuunxiangGit/iOS--InterviewQuestions/blob/master/imageFile/面试题总目录.PNG)
 
 ### 面试题基础篇目录以及基础篇详情页展示
@@ -22,3 +21,6 @@ iOS面试题集锦（附答案）
 ![](https://github.com/liyuunxiangGit/iOS--InterviewQuestions/blob/master/imageFile/面试题进阶篇详情页.PNG)
 ![](https://github.com/liyuunxiangGit/iOS--InterviewQuestions/blob/master/imageFile/面试题详情页页面内容.PNG)
 
+----
+
+![](https://github.com/liyuunxiangGit/iOS--InterviewQuestions/blob/master/imageFile/面试题目录图片.png)
